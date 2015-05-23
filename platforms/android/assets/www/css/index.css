@@ -1,0 +1,52 @@
+.btn-white{
+    background-color:white;
+    border-color:black;
+}
+.btn-orange{
+    background-color: orange;
+    outline-color:black;
+}
+.colourCircle{
+    border-radius:50%;
+    height:55px;
+    width:55px;
+    float:left;
+    margin:2px;
+}
+.checkCircle{
+    float:left;
+    height:20px;
+    width:20px;
+    margin:2px;
+}
+.orangePeg{
+    border-radius:50%;
+    background-color: orange;
+}
+.whitePeg{
+    border-radius:50%;
+    background-color: white;
+}
+.noPeg{
+    border-radius:50%;
+    border-color:black;
+    border-style: solid;
+    border-width: thin;
+}
+#buttons{
+    margin-left:10px;
+}
+#pegs {
+    height:60px;
+    margin:5px;
+    display: flex;
+    align-items: center;
+    border-style:solid;
+    border-color: grey;
+    border-width: thin;
+}
+
+#pegs > div {
+  display: table-cell;
+  vertical-align: middle;
+}
