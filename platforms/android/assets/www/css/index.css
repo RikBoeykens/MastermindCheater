@@ -33,13 +33,11 @@
     border-style: solid;
     border-width: thin;
 }
-#buttons{
-    margin-left:10px;
-}
 #pegs {
     height:60px;
     margin:5px;
-    display: flex;
+    display: table;
+    margin: 0 auto;
     align-items: center;
     border-style:solid;
     border-color: grey;
