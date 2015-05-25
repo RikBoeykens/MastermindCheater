@@ -3,7 +3,7 @@
 var app = angular.module("mastermindCheater");
 
 app.factory('Combination', function (){
-    var colours = ['yellow', 'red', 'blue', 'green', 'purple','saddlebrown'];
+    var colours = ['yellowPeg', 'redPeg', 'bluePeg', 'greenPeg', 'purplePeg','brownPeg'];
     Combination.getColours=angular.copy(colours);
     function Combination(combination){
         this.combination = combination;

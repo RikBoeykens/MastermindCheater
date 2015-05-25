@@ -4,25 +4,23 @@ var app = angular.module("mastermindCheater");
 
 app.service('solverService', function (Guess, Combination, solverHelper, optionsService){
     var colours = Combination.getColours;
-    var allCombinations = [];
-    var possCombinations = [];
+    var allCombinations = solverHelper.generateCombinations();
     var allChecks=solverHelper.generateChecks();
+    var possCombinations = [];
     var Guesses =[];
     var error;
     var waiting = false;
     var setCombinations = function(){
         //delete from previous
-        allCombinations.splice(0, allCombinations.length);
         possCombinations.splice(0, possCombinations.length);
         //
-        possCombinations=solverHelper.generateCombinations();
-        allCombinations=angular.copy(possCombinations);
+        possCombinations=angular.copy(allCombinations);
     };
     this.startGuessing = function(){
         error=null;
         Guesses.splice(0, Guesses.length);
         setCombinations();
-        Guesses.push(new Guess(new Combination(['yellow','yellow','red','red'], [])));
+        Guesses.push(new Guess(new Combination(['yellowPeg', 'yellowPeg', 'redPeg', 'redPeg']), []));
     };
     this.startGuessing();
     this.getNextGuess=function(){

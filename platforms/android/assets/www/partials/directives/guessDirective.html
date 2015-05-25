@@ -1,14 +1,14 @@
-<div>
+<div style="margin:10px">
     <div id="pegs">
         <div ng-repeat="colour in guess.getCombination() track by $index">
-            <span class="colourCircle" style="background-color:{{colour}}"></span>
+            <span class="circle colourCircle {{colour}}"></span>
         </div>
         <div id="checkPegs">
-            <span class="checkCircle" ng-class="guess.getOrange()>=1?'orangePeg':guess.getOrange()+guess.getWhite()>=1?'whitePeg':'noPeg'"></span>
-            <span class="checkCircle" ng-class="guess.getOrange()>=2?'orangePeg':guess.getOrange()+guess.getWhite()>=2?'whitePeg':'noPeg'"></span>
+            <span class="circle checkCircle" ng-class="guess.getOrange()>=1?'orangePeg':guess.getOrange()+guess.getWhite()>=1?'whitePeg':''"></span>
+            <span class="circle checkCircle" ng-class="guess.getOrange()>=2?'orangePeg':guess.getOrange()+guess.getWhite()>=2?'whitePeg':''"></span>
             <br />
-            <span class="checkCircle" ng-class="guess.getOrange()>=3?'orangePeg':guess.getOrange()+guess.getWhite()>=3?'whitePeg':'noPeg'"></span>
-            <span class="checkCircle" ng-class="guess.getOrange()>=4?'orangePeg':guess.getOrange()+guess.getWhite()>=4?'whitePeg':'noPeg'"></span>
+            <span class="circle checkCircle" ng-class="guess.getOrange()>=3?'orangePeg':guess.getOrange()+guess.getWhite()>=3?'whitePeg':''"></span>
+            <span class="circle checkCircle" ng-class="guess.getOrange()>=4?'orangePeg':guess.getOrange()+guess.getWhite()>=4?'whitePeg':''"></span>
         </div>
     </div>
 </div>

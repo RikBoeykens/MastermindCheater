@@ -6,35 +6,27 @@
     background-color: orange;
     outline-color:black;
 }
-.colourCircle{
+.circle{
     border-radius:50%;
+    float:left;
+    margin:2px;
+    border-color:black;
+    border-style: solid;
+    border-width: thin;   
+}
+.colourCircle{
     height:55px;
     width:55px;
-    float:left;
-    margin:2px;
-    border-color:black;
-    border-style: solid;
-    border-width: thin;
 }
 .checkCircle{
-    float:left;
     height:20px;
     width:20px;
-    margin:2px;
-    border-color:black;
-    border-style: solid;
-    border-width: thin;
 }
 .orangePeg{
-    border-radius:50%;
     background-color: orange;
 }
 .whitePeg{
-    border-radius:50%;
     background-color: white;
-}
-.noPeg{
-    border-radius:50%;
 }
 #pegs {
     height:60px;
@@ -50,6 +42,24 @@
 #pegs > div {
   display: table-cell;
   vertical-align: middle;
+}
+.yellowPeg{
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, #ffff17, #c8cc0d);    
+}
+.redPeg{
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, #ff1717, #990a0a);    
+}
+.bluePeg{
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, #3f17ff, #1b0a99);    
+}
+.greenPeg{
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, #4fff17, #22990a);    
+}
+.purplePeg{
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, #ff17ff, #960a99);    
+}
+.brownPeg{
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, #dd5819, #7e320e);    
 }
 .blink {
   -webkit-animation-name: blinker;  
