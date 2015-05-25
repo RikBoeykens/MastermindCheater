@@ -6,7 +6,7 @@ app.directive('guessDirective', function (){
         return {
         restrict: "E",
         replace: true,
-        templateUrl: 'partials/guessDirective.html',
+        templateUrl: 'partials/directives/guessDirective.html',
         scope: {
             guess: "="
         }
