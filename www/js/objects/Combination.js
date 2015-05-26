@@ -8,6 +8,9 @@ app.factory('Combination', function (){
     function Combination(combination){
         this.combination = combination;
     };
+    Combination.prototype.add=function(colour){
+        this.combination.push(colour);
+    }
     Combination.prototype.getCombination=function(){
         return this.combination;
     }

@@ -2,20 +2,10 @@
 
 var app = angular.module("mastermindCheater");
 
-app.service('solverHelper', function (Combination){
+app.service('solverHelper', function (Combination, optionsService){
     var colours = Combination.getColours;
     this.generateCombinations = function(){
-        var combinations =[];
-        for(var i=0;i<6;i++){
-            for(var j=0;j<6;j++){
-                for(var k=0;k<6;k++){
-                    for(var l=0;l<6;l++){
-                        combinations.push(new Combination([colours[i], colours[j], colours[k],colours[l]]));
-                    }
-                }
-            }
-        }
-        return combinations;
+        return generateRecursiveCombinations(colours, 4);
     };
     this.generateChecks = function(){
         var checks = [];
@@ -30,5 +20,25 @@ app.service('solverHelper', function (Combination){
     };
     this.validCheck = function(checkA, checkB){
         return JSON.stringify(checkA)==JSON.stringify(checkB);
+    };
+    var generateRecursiveCombinations=function(colourArray, count){
+        var resultArray=[];
+        for(var i=0;i<colourArray.length;i++){
+            if(count<=1){
+                resultArray.push(new Combination([colourArray[i]]));
+            }else{
+                var tempArray=angular.copy(colourArray);
+                var tempColour = tempArray[i];
+                if(!optionsService.getAllowDuplicates()){
+                    tempArray.splice(i, 1);
+                }
+                var newCombinations=generateRecursiveCombinations(tempArray,count-1);
+                angular.forEach(newCombinations, function(newCombination){
+                    newCombination.add(tempColour);
+                    resultArray.push(newCombination);
+                });
+            }
+        }
+        return resultArray;
     };
 });
