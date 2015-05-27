@@ -28,13 +28,14 @@ The app works as the codebreaker. Play the combinations the app gives, then ente
 <h3>
 <a id="how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span class="octicon octicon-link"></span></a>How it works</h3>
 
-<p>The app uses a simplified version of Donald Knuths algorithm:  </p>
+<p>The app uses Donald Knuths algorithm:  </p>
 
 <ul>
 <li>It creates a set of all 1296 combinations.<br>
 </li>
 <li>For each guess, it iterates over each combination and removes every combination that does not give the same response if the guess was the code.<br>
 </li>
+<li>Optionally the code looks for the combination that will eliminate the most combination. </li>
 <li>It keeps doing this until there is only one combination left.<br>
 </li>
 </ul>
