@@ -61,9 +61,15 @@
 .brownPeg{
     background-image: -webkit-radial-gradient(45px 45px, circle cover, #dd5819, #7e320e);    
 }
+@-webkit-keyframes blinker {  
+    0% { opacity: 0.0; }
+    50% { opacity: 1.0; } 
+    100% { opacity: 0.0; }
+}
 .blink {
-  -webkit-animation-name: blinker;  
-  -webkit-animation-iteration-count: infinite;  
-  -webkit-animation-timing-function: cubic-bezier(.5, 0, 1, 1);
-  -webkit-animation-duration: 1.7s; 
+    color:red;
+    -webkit-animation-name: blinker;  
+    -webkit-animation-iteration-count: infinite;  
+    -webkit-animation-timing-function: cubic-bezier(.5, 0, 1, 1);
+    -webkit-animation-duration: 1.7s; 
 }
