@@ -1,18 +1,13 @@
 .btn-white{
     background-color:white;
-    border-color:black;
 }
 .btn-orange{
     background-color: orange;
-    outline-color:black;
 }
 .circle{
     border-radius:50%;
     float:left;
-    margin:2px;
-    border-color:black;
-    border-style: solid;
-    border-width: thin;   
+    margin:2px;  
 }
 .colourCircle{
     height:55px;
@@ -27,6 +22,9 @@
 }
 .whitePeg{
     background-color: white;
+}
+.noPeg{
+    background-color:darkgray;
 }
 #pegs {
     height:60px;
@@ -44,22 +42,22 @@
   vertical-align: middle;
 }
 .yellowPeg{
-    background-image: -webkit-radial-gradient(45px 45px, circle cover, #ffff17, #c8cc0d);    
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, #ffde52, #dd9f3b);    
 }
 .redPeg{
-    background-image: -webkit-radial-gradient(45px 45px, circle cover, #ff1717, #990a0a);    
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, #ff4f3f, #c6392d);    
 }
 .bluePeg{
-    background-image: -webkit-radial-gradient(45px 45px, circle cover, #3f17ff, #1b0a99);    
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, #8df0ff, #65acd8);    
 }
 .greenPeg{
-    background-image: -webkit-radial-gradient(45px 45px, circle cover, #4fff17, #22990a);    
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, #2ca693, #207769);    
 }
 .purplePeg{
-    background-image: -webkit-radial-gradient(45px 45px, circle cover, #ff17ff, #960a99);    
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, #7f33a1, #5b2573);    
 }
 .brownPeg{
-    background-image: -webkit-radial-gradient(45px 45px, circle cover, #dd5819, #7e320e);    
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, #d25c28, #96421d);    
 }
 @-webkit-keyframes blinker {  
     0% { opacity: 0.0; }
