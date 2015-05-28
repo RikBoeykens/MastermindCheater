@@ -9,7 +9,6 @@ app.service('solverService', function (Guess, Combination, solverHelper, options
     var possCombinations = [];
     var Guesses =[];
     var error;
-    var waiting = false;
     var setCombinations = function(){
         //delete from previous
         possCombinations.splice(0, possCombinations.length);
@@ -21,11 +20,9 @@ app.service('solverService', function (Guess, Combination, solverHelper, options
         error=null;
         Guesses.splice(0, Guesses.length);
         setCombinations();
-        Guesses.push(new Guess(optionsService.getStartCombination(), []));
+        Guesses.push(new Guess(getStartCombination(), []));
     };
-    this.startGuessing();
     this.getNextGuess=function(){
-        waiting=true;
         if (possCombinations.length>0){
             error=null;
             var currentGuess=Guesses[Guesses.length-1];
@@ -43,7 +40,6 @@ app.service('solverService', function (Guess, Combination, solverHelper, options
                 possCombinations=discarded;
             }  
         };
-        waiting=false;
     };
     var getNextCombination = function(){
         if (possCombinations.length==1||!optionsService.getHighAccuracy()){
@@ -92,7 +88,13 @@ app.service('solverService', function (Guess, Combination, solverHelper, options
     this.getError = function(){
         return error;
     };
-    this.isWaiting = function(){
-        return waiting;
-    }
+    var getStartCombination = function(){
+        if(optionsService.getRandomStart()){
+            var randomInt=Math.floor(Math.random()*allCombinations.length);
+            return allCombinations[randomInt];
+        }else{
+            return optionsService.getStartCombination();
+        };
+    };
+    this.startGuessing();
 });

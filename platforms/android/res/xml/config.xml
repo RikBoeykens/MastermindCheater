@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.boeykens.mmcheater" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <preference name="loglevel" value="DEBUG" />
-    <name>MastermindCheater</name>
+    <name>Mastermind Cheater</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        A Apache Cordova application that solves the game Mastermind.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="rikboeykens@gmail.com" href="https://github.com/RikBoeykens">
+        Rik Boeykens
     </author>
     <content src="index.html" />
     <access origin="*" />

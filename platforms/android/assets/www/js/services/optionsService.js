@@ -5,6 +5,7 @@ var app = angular.module("mastermindCheater");
 app.service('optionsService', function (Combination){
     var highAccuracy=false;
     var allowDuplicates=true;
+    var randomStart=false;
     this.getHighAccuracy = function(){
         return highAccuracy;
     }
@@ -16,6 +17,12 @@ app.service('optionsService', function (Combination){
     }
     this.setAllowDuplicates=function(bool){
         allowDuplicates=bool;
+    }
+    this.getRandomStart= function(){
+        return randomStart;
+    }
+    this.setRandomStart=function(bool){
+        randomStart = bool;
     }
     this.getStartCombination = function(){
         var colours = Combination.getColours;
