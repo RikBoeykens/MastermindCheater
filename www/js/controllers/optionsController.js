@@ -11,4 +11,8 @@ app.controller('optionsController', function ($scope, optionsService){
     $scope.setAllowDuplicates = function(){
         optionsService.setAllowDuplicates(!optionsService.getAllowDuplicates());
     }
+    $scope.randomStart=optionsService.getRandomStart;
+    $scope.setRandomStart = function(){
+        optionsService.setRandomStart(!optionsService.getRandomStart());
+    }
 });
