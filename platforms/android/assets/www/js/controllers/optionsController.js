@@ -15,4 +15,7 @@ app.controller('optionsController', function ($scope, optionsService){
     $scope.setRandomStart = function(){
         optionsService.setRandomStart(!optionsService.getRandomStart());
     }
+    $scope.rightPlaceColours=optionsService.getRightPlaceColours;
+    $scope.rightPlaceColourNo=optionsService.getRightPlaceColourNo;
+    $scope.setRightPlaceColour=optionsService.setRightPlaceColour;
 });

@@ -1,9 +1,21 @@
-<div style="margin-left:5px">
+<div style="margin-left:5px; font-size:18px">
     <h3>Options</h3>
-
-    <label><input type="checkbox" ng-model="highAccuracy()" ng-click="setHighAccuracy()">High Accuracy</label>
+    <div class="selectDiv" ng-click="setHighAccuracy()">
+        <span class="circle selectable" ng-class="highAccuracy()?'selected':''"></span>
+        <span class="selectSpan">High Accuracy</span>
+    </div>
+    <div class="selectDiv" ng-click="setAllowDuplicates()">
+        <span class="circle selectable" ng-class="allowDuplicates()?'selected':''"></span>
+        <span class="selectSpan">Allow duplicates</span>
+    </div>
+    <div class="selectDiv" ng-click="setRandomStart()">
+        <span class="circle selectable" ng-class="randomStart()?'selected':''"></span>
+        <span class="selectSpan">Random start combination</span>
+    </div>
     <br />
-    <label><input type="checkbox" ng-model="allowDuplicates()" ng-click="setAllowDuplicates()">Allow duplicates</label>
+    <span>Right Place Colour:</span>
     <br />
-    <label><input type="checkbox" ng-model="randomStart()" ng-click="setRandomStart()">Random start combination</label>
+    <div class="rightPlacePegs">
+        <span class="circle rightPlaceCircle {{colour}}" ng-class="$index==rightPlaceColourNo()?'selectedRightPlace':''" ng-repeat="colour in rightPlaceColours()" ng-click="setRightPlaceColour($index)"></span>  
+    </div>
 </div>

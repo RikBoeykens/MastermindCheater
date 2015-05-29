@@ -6,6 +6,8 @@ app.service('optionsService', function (Combination){
     var highAccuracy=false;
     var allowDuplicates=true;
     var randomStart=false;
+    var rightPlaceColours =["redRightPlace", "blackRightPlace", "orangeRightPlace"];
+    var rightPlaceColourNo= 1;
     this.getHighAccuracy = function(){
         return highAccuracy;
     }
@@ -32,5 +34,16 @@ app.service('optionsService', function (Combination){
             return new Combination([colours[0], colours[1], colours[2], colours[3]]);
         }
     }
-    
+    this.getRightPlaceColours=function(){
+        return rightPlaceColours;
+    }
+    this.getRightPlaceColour =function(){
+        return rightPlaceColours[rightPlaceColourNo];
+    }
+    this.getRightPlaceColourNo = function(){
+        return rightPlaceColourNo;
+    }
+    this.setRightPlaceColour=function(number){
+        rightPlaceColourNo=number;
+    }
 });

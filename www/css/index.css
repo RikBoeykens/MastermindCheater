@@ -1,31 +1,10 @@
-.btn-white{
-    background-color:white;
-}
-.btn-orange{
-    background-color: orange;
-}
+/* The main circle class */
 .circle{
     border-radius:50%;
     float:left;
     margin:2px;  
 }
-.colourCircle{
-    height:55px;
-    width:55px;
-}
-.checkCircle{
-    height:20px;
-    width:20px;
-}
-.orangePeg{
-    background-color: orange;
-}
-.whitePeg{
-    background-color: white;
-}
-.noPeg{
-    background-color:darkgray;
-}
+/* Classes for the circles in the guess directive */
 #pegs {
     height:60px;
     margin:5px;
@@ -35,11 +14,15 @@
     border-style:solid;
     border-color: grey;
     border-width: thin;
+    background-color:lightgray;
 }
-
 #pegs > div {
   display: table-cell;
   vertical-align: middle;
+} 
+.colourCircle{
+    height:55px;
+    width:55px;
 }
 .yellowPeg{
     background-image: -webkit-radial-gradient(45px 45px, circle cover, #ffde52, #dd9f3b);    
@@ -59,6 +42,62 @@
 .brownPeg{
     background-image: -webkit-radial-gradient(45px 45px, circle cover, #d25c28, #96421d);    
 }
+.checkCircle{
+    height:20px;
+    width:20px;
+}
+/* Classes for the 'check Pegs' */
+.selectedRightPlace{
+    border-style:solid;
+    border-color:blue;
+}
+.blackRightPlace{
+    background-color: black;
+    color:white;
+}
+.redRightPlace{
+    background-color: red;
+    color:white;
+}
+.orangeRightPlace{
+    background-color: orange;
+    color:white;
+}
+.rightColour{
+    background-color: white;
+}
+.noPeg{
+    background-color:darkgray;
+}
+/* Classes for the pegs in the options menu to choose the colour of rightPlace */
+.rightPlacePegs{
+    display:inline-flex;
+    align-items:center;
+    margin:5px;
+}
+.rightPlaceCircle{
+    height:30px;
+    width:30px;
+    margin:5px;
+}
+/* Classes for simulated checkbox in options */
+.selectDiv{
+    height:30px;
+}
+.selectable{
+    height:20px;
+    width:20px;
+    margin:5px;
+    border-style:solid;
+    border-color:blue;
+}
+.selected{
+    background-color:blue;
+}
+.selectSpan{
+    vertical-align: middle;
+}
+/* The blinker for the *Is Loading* message **/
 @-webkit-keyframes blinker {  
     0% { opacity: 0.0; }
     50% { opacity: 1.0; } 

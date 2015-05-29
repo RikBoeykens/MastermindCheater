@@ -5,41 +5,41 @@ var app = angular.module("mastermindCheater");
 app.factory('Guess', function (Combination){
     function Guess(combination, discarded){
         this.combination = combination;
-        this.info={orangePegs:0, whitePegs:0};
+        this.info={rightPlace:0, rightColour:0};
         this.discarded=discarded;
     };
     Guess.prototype.getCombination=function(){
         return this.combination.combination;
     }
-    Guess.prototype.getWhite=function(){
-        return this.info.whitePegs;
+    Guess.prototype.getRC=function(){
+        return this.info.rightColour;
     };
-    Guess.prototype.getOrange=function(){
-        return this.info.orangePegs;
+    Guess.prototype.getRP=function(){
+        return this.info.rightPlace;
     };
-    Guess.prototype.addWhite = function(positive){
+    Guess.prototype.addRightColour = function(positive){
         if (positive){
             //add
-            if(this.info.whitePegs+this.info.orangePegs<4){
-                this.info.whitePegs++;
+            if(this.info.rightColour+this.info.rightPlace<4){
+                this.info.rightColour++;
             }
         }else{
             //subtract
-            if (this.info.whitePegs>0){
-                this.info.whitePegs--;
+            if (this.info.rightColour>0){
+                this.info.rightColour--;
             }
         }
     };
-    Guess.prototype.addOrange = function(positive){
+    Guess.prototype.addRightPlace = function(positive){
         if (positive){
             //add
-            if(this.info.whitePegs+this.info.orangePegs<4){
-                this.info.orangePegs++;
+            if(this.info.rightColour+this.info.rightPlace<4){
+                this.info.rightPlace++;
             }
         }else{
             //subtract
-            if (this.info.orangePegs>0){
-                this.info.orangePegs--;
+            if (this.info.rightPlace>0){
+                this.info.rightPlace--;
             }
         }        
     };

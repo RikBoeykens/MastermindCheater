@@ -2,7 +2,7 @@
 
 var app = angular.module("mastermindCheater");
 
-app.controller('mastermindController', function ($scope, solverService, $timeout){
+app.controller('mastermindController', function ($scope, solverService, $timeout, optionsService){
     $scope.guesses=solverService.getGuesses;
     $scope.getNextGuess = function(){
         $scope.isWaiting = true;
@@ -13,11 +13,12 @@ app.controller('mastermindController', function ($scope, solverService, $timeout
     }
     $scope.reset = solverService.startGuessing;
     $scope.undo = solverService.undoGuess;
-    $scope.addWhite=function(positive){
-        solverService.getGuesses()[solverService.getGuesses().length-1].addWhite(positive);
+    $scope.rightPlace=optionsService.getRightPlaceColour();
+    $scope.addRightColour=function(positive){
+        solverService.getGuesses()[solverService.getGuesses().length-1].addRightColour(positive);
     };
-    $scope.addOrange=function(positive){
-        solverService.getGuesses()[solverService.getGuesses().length-1].addOrange(positive);
+    $scope.addRightPlace=function(positive){
+        solverService.getGuesses()[solverService.getGuesses().length-1].addRightPlace(positive);
     };
     $scope.combinationsLeft = solverService.getCombinationsLeft;
     $scope.error = solverService.getError;

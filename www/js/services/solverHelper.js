@@ -12,7 +12,7 @@ app.service('solverHelper', function (Combination, optionsService){
         for(var i=0; i<4;i++){
             for(var j=0; j<4;j++){
                 if (i+j<=4){
-                    checks.push({orangePegs:i, whitePegs:j});
+                    checks.push({rightPlace:i, rightColour:j});
                 }
             }
         }

@@ -17,15 +17,15 @@ app.factory('Combination', function (){
     Combination.prototype.checkCombination=function(otherCombination){
         var ownCombination=this.combination;
         var checkCombination=otherCombination.combination;
-        //get orange pegs
-        var orangeCount =0;
+        //get rightPlace pegs
+        var rightPlaceCount =0;
         for(var i=0; i<4; i++){
             if (ownCombination[i]==checkCombination[i]){
-                orangeCount++;
+                rightPlaceCount++;
             }
         }
-        //get white pegs
-        var whiteCount = 0;
+        //get rightColour pegs
+        var rightColourCount = 0;
         angular.forEach(colours, function(colour){            
             var checkCount = 0;
             var thisCount = 0;
@@ -37,11 +37,11 @@ app.factory('Combination', function (){
                     checkCount++;
                 };
             };
-            whiteCount+=Math.min(thisCount,checkCount);
+            rightColourCount+=Math.min(thisCount,checkCount);
         });
-        whiteCount-=orangeCount;
+        rightColourCount-=rightPlaceCount;
         
-        return {orangePegs:orangeCount, whitePegs:whiteCount};
+        return {rightPlace:rightPlaceCount, rightColour:rightColourCount};
     };    
     return Combination;
 });
