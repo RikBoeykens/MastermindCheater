@@ -1,0 +1,14 @@
+<div style="margin:10px">
+    <div id="pegs">
+        <div ng-repeat="colour in guess.getCombination() track by $index">
+            <span class="circle colourCircle {{colour}}"></span>
+        </div>
+        <div id="checkPegs">
+            <span class="circle checkCircle" ng-class="guess.getRP()>=1?'{{rightPlace}}':guess.getRP()+guess.getRC()>=1?'rightColour':'noPeg'"></span>
+            <span class="circle checkCircle" ng-class="guess.getRP()>=2?'{{rightPlace}}':guess.getRP()+guess.getRC()>=2?'rightColour':'noPeg'"></span>
+            <br />
+            <span class="circle checkCircle" ng-class="guess.getRP()>=3?'{{rightPlace}}':guess.getRP()+guess.getRC()>=3?'rightColour':'noPeg'"></span>
+            <span class="circle checkCircle" ng-class="guess.getRP()>=4?'{{rightPlace}}':guess.getRP()+guess.getRC()>=4?'rightColour':'noPeg'"></span>
+        </div>
+    </div>
+</div>
