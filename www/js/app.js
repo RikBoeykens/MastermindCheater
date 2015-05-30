@@ -1,13 +1,9 @@
 'use strict';
 
-var app = angular.module("mastermindCheater", ["ngRoute", "ui.bootstrap"]);
+var app = angular.module("mastermindCheater", ["ngRoute"]);
 
 app.config(function($routeProvider){
     $routeProvider
-        .when("/main", {
-            templateUrl: "partials/main.html",
-            controller: "mainController"
-        })
         .when("/mastermind", {
             templateUrl: "partials/mastermind.html",
             controller: "mastermindController"
@@ -20,5 +16,5 @@ app.config(function($routeProvider){
             templateUrl: "partials/howTo.html",
             controller: "howToController"
         })
-        .otherwise({redirectTo:"/main"});
+        .otherwise({redirectTo:"/mastermind"});
 });

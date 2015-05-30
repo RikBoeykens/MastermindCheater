@@ -2,7 +2,7 @@
 
 var app = angular.module("mastermindCheater");
 
-app.controller('mastermindController', function ($scope, solverService, $timeout, optionsService){
+app.controller('mastermindController', ['$scope', 'solverService', '$timeout', 'optionsService', function ($scope, solverService, $timeout, optionsService){
     $scope.guesses=solverService.getGuesses;
     $scope.getNextGuess = function(){
         $scope.isWaiting = true;
@@ -22,4 +22,4 @@ app.controller('mastermindController', function ($scope, solverService, $timeout
     };
     $scope.combinationsLeft = solverService.getCombinationsLeft;
     $scope.error = solverService.getError;
-});
+}]);

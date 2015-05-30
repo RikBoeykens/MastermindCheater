@@ -2,7 +2,7 @@
 
 var app = angular.module("mastermindCheater");
 
-app.factory('Guess', function (Combination){
+app.factory('Guess', ['Combination', function (Combination){
     function Guess(combination, discarded){
         this.combination = combination;
         this.info={rightPlace:0, rightColour:0};
@@ -51,4 +51,4 @@ app.factory('Guess', function (Combination){
     };
     
     return Guess;
-});
+}]);

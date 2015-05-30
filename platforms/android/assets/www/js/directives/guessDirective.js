@@ -2,7 +2,7 @@
 
 var app = angular.module("mastermindCheater");
 
-app.directive('guessDirective', function (optionsService){
+app.directive('guessDirective', ['optionsService', function (optionsService){
         return {
         restrict: "E",
         replace: true,
@@ -14,4 +14,4 @@ app.directive('guessDirective', function (optionsService){
             $scope.rightPlace = optionsService.getRightPlaceColour();
         }
     };
-});
+}]);

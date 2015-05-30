@@ -50,6 +50,7 @@
 .selectedRightPlace{
     border-style:solid;
     border-color:blue;
+    border-width: thick;
 }
 .blackRightPlace{
     background-color: black;

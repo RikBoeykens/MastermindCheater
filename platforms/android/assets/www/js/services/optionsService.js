@@ -2,11 +2,11 @@
 
 var app = angular.module("mastermindCheater");
 
-app.service('optionsService', function (Combination){
+app.service('optionsService', ['Combination', function (Combination){
     var highAccuracy=false;
     var allowDuplicates=true;
     var randomStart=false;
-    var rightPlaceColours =["redRightPlace", "blackRightPlace", "orangeRightPlace"];
+    var rightPlaceColours =[{class:"redRightPlace", name:"red"}, {class:"blackRightPlace", name:"black"}, {class:"orangeRightPlace", name:"orange"}];
     var rightPlaceColourNo= 1;
     this.getHighAccuracy = function(){
         return highAccuracy;
@@ -38,7 +38,10 @@ app.service('optionsService', function (Combination){
         return rightPlaceColours;
     }
     this.getRightPlaceColour =function(){
-        return rightPlaceColours[rightPlaceColourNo];
+        return rightPlaceColours[rightPlaceColourNo].class;
+    }
+    this.getRightPlaceColourName=function(){
+        return rightPlaceColours[rightPlaceColourNo].name;
     }
     this.getRightPlaceColourNo = function(){
         return rightPlaceColourNo;
@@ -46,4 +49,4 @@ app.service('optionsService', function (Combination){
     this.setRightPlaceColour=function(number){
         rightPlaceColourNo=number;
     }
-});
+}]);

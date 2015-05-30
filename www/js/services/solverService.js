@@ -2,7 +2,7 @@
 
 var app = angular.module("mastermindCheater");
 
-app.service('solverService', function (Guess, Combination, solverHelper, optionsService){
+app.service('solverService',['Guess', 'Combination', 'solverHelper', 'optionsService', function (Guess, Combination, solverHelper, optionsService){
     var colours = Combination.getColours;
     var allCombinations = [];
     var allChecks=solverHelper.generateChecks();
@@ -97,4 +97,4 @@ app.service('solverService', function (Guess, Combination, solverHelper, options
         };
     };
     this.startGuessing();
-});
+}]);

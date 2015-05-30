@@ -16,6 +16,6 @@
     <span>Right Place Colour:</span>
     <br />
     <div class="rightPlacePegs">
-        <span class="circle rightPlaceCircle {{colour}}" ng-class="$index==rightPlaceColourNo()?'selectedRightPlace':''" ng-repeat="colour in rightPlaceColours()" ng-click="setRightPlaceColour($index)"></span>  
+        <span class="circle rightPlaceCircle {{colour.class}}" ng-class="$index==rightPlaceColourNo()?'selectedRightPlace':''" ng-repeat="colour in rightPlaceColours()" ng-click="setRightPlaceColour($index)"></span>  
     </div>
 </div>

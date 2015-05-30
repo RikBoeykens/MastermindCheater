@@ -2,7 +2,7 @@
 
 var app = angular.module("mastermindCheater");
 
-app.service('solverHelper', function (Combination, optionsService){
+app.service('solverHelper',['Combination', 'optionsService', function (Combination, optionsService){
     var colours = Combination.getColours;
     this.generateCombinations = function(){
         return generateRecursiveCombinations(colours, 4);
@@ -41,4 +41,4 @@ app.service('solverHelper', function (Combination, optionsService){
         }
         return resultArray;
     };
-});
+}]);

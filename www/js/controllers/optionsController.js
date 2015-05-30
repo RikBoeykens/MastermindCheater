@@ -2,7 +2,7 @@
 
 var app = angular.module("mastermindCheater");
 
-app.controller('optionsController', function ($scope, optionsService){
+app.controller('optionsController',['$scope', 'optionsService', function ($scope, optionsService){
     $scope.highAccuracy = optionsService.getHighAccuracy;
     $scope.setHighAccuracy=function(){
         optionsService.setHighAccuracy(!optionsService.getHighAccuracy());
@@ -18,4 +18,4 @@ app.controller('optionsController', function ($scope, optionsService){
     $scope.rightPlaceColours=optionsService.getRightPlaceColours;
     $scope.rightPlaceColourNo=optionsService.getRightPlaceColourNo;
     $scope.setRightPlaceColour=optionsService.setRightPlaceColour;
-});
+}]);
